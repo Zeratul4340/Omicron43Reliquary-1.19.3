@@ -3,6 +3,6 @@ This mod is partly a test for my Java skill and partly a way to add some items t
 
 Inspired by the tireless work of koolkid94. The mead flows.
 
-##Setup
+## Setup
 
 TODO: There is no wiki as of yet
