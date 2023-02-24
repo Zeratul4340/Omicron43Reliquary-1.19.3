@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "omicron43reliquary",
+	"version": "${version}",
+	"name": "Omicron43's Reliquary",
+	"description": "This mod is partly a test for my Java skill and partly a way to add some items to equalize overpowered things",
+	"authors": [
+		"Omicron43"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/omicron43reliquary/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"omicron43.reliquarymod.Omicron43Reliquary"
+		],
+		"client": [
+			"net.omicron43.reliquarymod.Omicron43ReliquaryClient"
+		],
+		"fabric-datagen": [
+			"omicron43.reliquarymod.Omicron43ReliquaryDataGenerator"
+		]
+	},
+	"mixins": [
+		"omicron43reliquary.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.14.14",
+		"minecraft": "~1.19.3",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
