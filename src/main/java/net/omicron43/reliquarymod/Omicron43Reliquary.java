@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class Omicron43Reliquary implements ModInitializer {
+	//getting a feel for committing changes
 	public static final String MOD_ID = "omicron43s-reliquary";
 	public static final Logger LOGGER = LoggerFactory.getLogger("omicron43reliquary");
 
