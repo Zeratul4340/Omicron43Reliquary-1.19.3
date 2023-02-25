@@ -1,3 +1,6 @@
 {
-  "item.reliquarymod.citrine": "Citrine"
+  "item.reliquarymod.citrine": "Citrine",
+  "item.reliquarymod.raw_citrine": "Raw Citrine",
+
+  "itemgroup.citrine": "Citrine Item Group"
 }

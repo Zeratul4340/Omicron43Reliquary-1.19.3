@@ -2,6 +2,7 @@ package omicron43.reliquarymod;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.omicron43.reliquarymod.item.ModItemGroup;
 import net.omicron43.reliquarymod.item.ModItems;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,6 +14,7 @@ public class Omicron43Reliquary implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		ModItemGroup.registerItemGroups();
 		ModItems.registerModItems();
 	}
 }
