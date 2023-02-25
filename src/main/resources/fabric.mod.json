@@ -1,9 +1,9 @@
 {
 	"schemaVersion": 1,
 	"id": "omicron43reliquary",
-	"version": "${version}",
+	"version": "0.0.1",
 	"name": "Omicron43's Reliquary",
-	"description": "This mod is partly a test for my Java skill and partly a way to add some items to equalize overpowered things",
+	"description": "Mod made by a professional forum loafer",
 	"authors": [
 		"Omicron43"
 	],
@@ -12,7 +12,7 @@
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/omicron43reliquary/icon.png",
+	"icon": "assets/reliquarymod/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
@@ -26,7 +26,7 @@
 		]
 	},
 	"mixins": [
-		"omicron43reliquary.mixins.json"
+		"reliquarymod.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.14.14",
