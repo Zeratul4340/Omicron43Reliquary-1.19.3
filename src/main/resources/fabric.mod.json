@@ -5,11 +5,12 @@
 	"name": "Omicron43's Reliquary",
 	"description": "Mod made by a professional forum loafer",
 	"authors": [
-		"Omicron43"
+		"Omicron43",
+		"kuwulkid94"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://docs.google.com/document/d/19MJi0cEaAXYcVjlNX9bTlvoJp7d2Jtk6RahsYEJwxWQ",
+		"sources": "https://github.com/Zeratul4340/Omicron43Reliquary-1.19.3"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/reliquarymod/icon.png",
