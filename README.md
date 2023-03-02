@@ -5,4 +5,4 @@ Inspired by the tireless work of koolkid94. The mead flows.
 
 ## Setup
 
-TODO: There is no wiki as of yet
+Wiki regarding the features of the mod: [Arcanonomicon](https://docs.google.com/document/d/19MJi0cEaAXYcVjlNX9bTlvoJp7d2Jtk6RahsYEJwxWQ/edit?usp=sharing)
