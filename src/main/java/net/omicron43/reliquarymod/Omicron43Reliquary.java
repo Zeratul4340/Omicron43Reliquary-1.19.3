@@ -2,6 +2,9 @@ package net.omicron43.reliquarymod;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
+import net.omicron43.reliquarymod.entity.ModEntities;
+import net.omicron43.reliquarymod.entity.custom.MutaliskEntity;
 import net.omicron43.reliquarymod.item.ModItemGroup;
 import net.omicron43.reliquarymod.item.ModItems;
 import org.slf4j.Logger;
@@ -18,5 +21,7 @@ public class Omicron43Reliquary implements ModInitializer {
 		ModItemGroup.registerItemGroups();
 		ModItems.registerModItems();
 		GeckoLib.initialize();
+
+		FabricDefaultAttributeRegistry.register(ModEntities.MUTALISK, MutaliskEntity.setAttributes());
 	}
 }

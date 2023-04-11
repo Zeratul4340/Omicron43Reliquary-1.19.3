@@ -12,9 +12,17 @@ import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
+import net.omicron43.reliquarymod.entity.ModEntities;
 import org.jetbrains.annotations.Nullable;
+import software.bernie.geckolib.animatable.GeoEntity;
+import software.bernie.geckolib.core.animatable.GeoAnimatable;
+import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInstanceCache;
+import software.bernie.geckolib.core.animation.*;
+import software.bernie.geckolib.core.object.PlayState;
 
-public class MutaliskEntity extends AnimalEntity {
+public class MutaliskEntity extends AnimalEntity implements GeoEntity {
+    private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
     public MutaliskEntity(EntityType<? extends AnimalEntity> entityType, World world) {
         super(entityType, world);
@@ -44,6 +52,26 @@ public class MutaliskEntity extends AnimalEntity {
     @Nullable
     @Override
     public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
-        return null;
+        return ModEntities.MUTALISK.create(world);
+    }
+
+    @Override
+    public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
+        controllerRegistrar.add(new AnimationController<>(this, "controller", 0, this::predicate));
+    }
+
+    private <T extends GeoAnimatable> PlayState predicate(AnimationState<T> tAnimationState) {
+        if(tAnimationState.isMoving()){
+            tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.mutalisk.fly", Animation.LoopType.LOOP));
+        }
+
+
+        tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.mutalisk.flyidle", Animation.LoopType.LOOP));
+        return PlayState.CONTINUE;
+    }
+
+    @Override
+    public AnimatableInstanceCache getAnimatableInstanceCache() {
+        return cache;
     }
 }
