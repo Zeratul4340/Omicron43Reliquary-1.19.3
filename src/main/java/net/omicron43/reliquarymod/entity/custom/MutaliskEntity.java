@@ -1,29 +1,49 @@
 package net.omicron43.reliquarymod.entity.custom;
 
+
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.data.TrackedData;
+import net.minecraft.entity.ai.goal.*;
+import net.minecraft.entity.attribute.DefaultAttributeContainer;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.mob.PathAwareEntity;
+import net.minecraft.entity.passive.AnimalEntity;
+import net.minecraft.entity.passive.MerchantEntity;
+import net.minecraft.entity.passive.PassiveEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 
-public class MutaliskEntity extends PathAwareEntity /* implements IAnimatable */ {
-    //try implementing Minecraft flutterable or see whatever the ghast or phantom does idk
+public class MutaliskEntity extends AnimalEntity {
 
-    private int warmup;
-
-    private int ticksLeft = 120;
-
-    private static TrackedData<Integer> SPAWN_TIMER = null;
-   /* private static final TrackedData<Integer> ANIMATION;
-    private final AnimationBuilder DEATH_ANIMATION = new AnimationBuilder().addAnimation("animation.mutalisk.death", ILoopType.EDefaultLoopTypes.HOLD_ON_LAST_FRAME);
-    private final AnimationBuilder SPAWN_ANIMATION = new AnimationBuilder().addAnimation("animation.mutalisk.spawn", ILoopType.EDefaultLoopTypes.HOLD_ON_LAST_FRAME);
-    private final AnimationBuilder ATTACK_ANIMATION = new AnimationBuilder().addAnimation("animation.mutalisk.attack", ILoopType.EDefaultLoopTypes.LOOP);
-    */
-
-    //   private AnimationFactory factory = GeckoLibUtil.createFactory(this);
-    //well anyhow there's a load of methods ill just let you fill this in or ill come back later im zzzzzzz sleepy
-    protected MutaliskEntity(EntityType<? extends PathAwareEntity> entityType, World world) {
+    public MutaliskEntity(EntityType<? extends AnimalEntity> entityType, World world) {
         super(entityType, world);
     }
-    //this constructer needs a bit more too
 
+    public static DefaultAttributeContainer.Builder setAttributes() {
+        return AnimalEntity.createMobAttributes()
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 40.0D)
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 8.0f)
+                .add(EntityAttributes.GENERIC_ATTACK_SPEED, 2.0f)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 1.0f);
+    }
+
+    @Override
+    protected void initGoals() {
+        this.goalSelector.add(1, new SwimGoal(this));
+        this.goalSelector.add(2, new MeleeAttackGoal(this, 1.2D, false));
+        this.goalSelector.add(3, new WanderAroundFarGoal(this, 0.75f, 1));
+
+        this.goalSelector.add(4, new LookAroundGoal(this));
+
+        this.targetSelector.add(2, new ActiveTargetGoal<>(this, PlayerEntity.class, true));
+        this.targetSelector.add(2, new ActiveTargetGoal<>(this, MerchantEntity.class, true));
+        this.targetSelector.add(3, new ActiveTargetGoal<>(this, AnimalEntity.class, true));
+    }
+
+    @Nullable
+    @Override
+    public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
+        return null;
+    }
 }

@@ -6,6 +6,7 @@ import net.omicron43.reliquarymod.item.ModItemGroup;
 import net.omicron43.reliquarymod.item.ModItems;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import software.bernie.geckolib3.GeckoLib;
 
 public class Omicron43Reliquary implements ModInitializer {
 	//getting a feel for committing changes
@@ -16,5 +17,6 @@ public class Omicron43Reliquary implements ModInitializer {
 	public void onInitialize() {
 		ModItemGroup.registerItemGroups();
 		ModItems.registerModItems();
+		GeckoLib.initialize();
 	}
 }
