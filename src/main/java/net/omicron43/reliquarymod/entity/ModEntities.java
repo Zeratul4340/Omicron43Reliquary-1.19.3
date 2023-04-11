@@ -8,7 +8,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.omicron43.reliquarymod.entity.custom.MutaliskEntity;
-import omicron43.reliquarymod.Omicron43Reliquary;
+import net.omicron43.reliquarymod.Omicron43Reliquary;
 
 public class ModEntities {
     public static final EntityType<MutaliskEntity> MUTALISK = Registry.register(

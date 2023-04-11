@@ -5,7 +5,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-import omicron43.reliquarymod.Omicron43Reliquary;
+import net.omicron43.reliquarymod.Omicron43Reliquary;
 
 public class ModItemGroup {
     public static ItemGroup CITRINE;

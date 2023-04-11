@@ -8,7 +8,7 @@ import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import omicron43.reliquarymod.Omicron43Reliquary;
+import net.omicron43.reliquarymod.Omicron43Reliquary;
 
 public class ModItems {
     public static final Item CITRINE = registerItem("citrine", new Item(new FabricItemSettings()));

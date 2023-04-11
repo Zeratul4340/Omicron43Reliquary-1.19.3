@@ -1,9 +1,5 @@
 package net.omicron43.reliquarymod.entity.client;
 
-import net.minecraft.util.Identifier;
-import net.omicron43.reliquarymod.entity.custom.MutaliskEntity;
-import omicron43.reliquarymod.Omicron43Reliquary;
-
 public class MutaliskModel /*extends AnimatedGeoModel<MutaliskEntity> */{
     
 /*
